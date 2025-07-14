@@ -1,6 +1,8 @@
 import numpy as np 
 import matplotlib.pyplot as plt
 
+#Methode vu dans le cours d'analyse numérique en scilab
+
 def dicho(f,a,b,epsilon):
     fa,fb=f(a),f(b)
     if np.sign(fa)==np.sign(fb):
