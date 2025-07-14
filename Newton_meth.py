@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np 
-
+# Méthode de Newton comme vue au TP d'analyse numérique 
 def f(x):
     return x**2-2
 
