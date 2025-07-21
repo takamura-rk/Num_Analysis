@@ -22,6 +22,7 @@ def Itern(phi,x_0,N):
    
 X_1=Itern(phi1,1,20)
 print(X_1)
+
 X_2=Itern(phi2,1,20)
 print(X_2)
 
