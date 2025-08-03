@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 def f_1(t,y):
-    return -np.exp(t*y)
+    return -np.sqrt(np.abs(y))
 
 def f_2(t,y):
     return 1/(1+t*y)    
@@ -36,7 +36,19 @@ def euler_imp(f,y0,t_i,t_f,h):
         y_n.append(y_1)
 
     return t_n, y_n
+
+def euler_exp_sys(f, Y0, t0, tf, h):
     
+    t = np.arange(t0, tf + h, h)
+    Y = np.zeros((len(t), len(Y0)))
+    Y[0] = Y0
+    
+    for i in range(0, len(t) - 1):
+        Y[i+1] = Y[i] + h * f(Y[i], t[i])
+        
+    return t, Y
+
+"""
 y0 = 1
 t_i = -5
 t_f = 5
@@ -52,7 +64,7 @@ plt.title("Comparaison Euler Explicite vs Implicite\npour $y' = \\frac{1}{1 + ty
 plt.grid(True)
 plt.legend()
 plt.show()
-
+"""
 # Remarque :
 # On observe une différence significative entre Euler explicite et Euler implicite :
 # - La méthode explicite peut devenir instable ou diverger dans certaines zones de l’intervalle, 
